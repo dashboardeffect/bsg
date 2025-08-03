@@ -15,8 +15,10 @@ import {
   Mail,
   MapPin,
   ArrowUp,
-  CheckCircle
+  CheckCircle,
+  BookOpen
 } from 'lucide-react';
+import InsightsPage from './components/InsightsPage';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,6 +71,10 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (currentPage === 'insights') {
+    return <InsightsPage onBack={() => setCurrentPage('home')} />;
+  }
 
   if (currentPage === 'contact') {
     return (
@@ -369,7 +375,13 @@ function App() {
               <a href="#" className="text-blue-600 font-medium border-b border-blue-600 pb-1">Home</a>
               <button onClick={() => scrollToSection('about')} className="text-slate-800 font-medium hover:text-blue-600 transition-colors">About</button>
               <button onClick={() => scrollToSection('services')} className="text-slate-800 font-medium hover:text-blue-600 transition-colors">Services</button>
-              <button onClick={() => scrollToSection('insights')} className="text-slate-800 font-medium hover:text-blue-600 transition-colors">Insights</button>
+              <button 
+                onClick={() => setCurrentPage('insights')}
+                className="text-slate-800 font-medium hover:text-blue-600 transition-colors flex items-center"
+              >
+                <BookOpen className="w-4 h-4 mr-1" />
+                Insights
+              </button>
             </nav>
 
             {/* Mobile Navigation Toggle */}
@@ -400,7 +412,16 @@ function App() {
                 <a href="#" className="text-blue-600 font-medium">Home</a>
                 <button onClick={() => scrollToSection('about')} className="text-slate-800 hover:text-blue-600 transition-colors text-left">About</button>
                 <button onClick={() => scrollToSection('services')} className="text-slate-800 hover:text-blue-600 transition-colors text-left">Services</button>
-                <button onClick={() => scrollToSection('insights')} className="text-slate-800 hover:text-blue-600 transition-colors text-left">Insights</button>
+                <button 
+                  onClick={() => {
+                    setCurrentPage('insights');
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-slate-800 hover:text-blue-600 transition-colors text-left flex items-center"
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Insights
+                </button>
               </nav>
             </div>
           )}
