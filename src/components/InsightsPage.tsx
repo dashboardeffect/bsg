@@ -101,7 +101,7 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
           <div className="flex items-center justify-between">
             <button
               onClick={onBack}
-              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back to Home
@@ -115,12 +115,12 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">
             Insights That Drive Growth
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Stay ahead of industry trends with our expert analysis, strategic frameworks, 
             and actionable insights designed to accelerate your business success.
           </p>
@@ -136,7 +136,7 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 selectedCategory === category
-                  ? 'bg-gray-900 text-white shadow-lg'
+                  ? 'bg-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
             >
@@ -161,14 +161,14 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                     {article.category}
                   </span>
                 </div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
                   {article.title}
                 </h3>
                 
@@ -193,7 +193,7 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
                     {article.date}
                   </div>
                   
-                  <button className="flex items-center text-gray-900 hover:text-gray-700 font-medium text-sm group-hover:translate-x-1 transition-transform duration-200">
+                  <button className="flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group-hover:translate-x-1 transition-transform duration-200">
                     Read More
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </button>
@@ -216,9 +216,9 @@ export default function InsightsPage({ onBack }: InsightsPageProps) {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+            <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
               Subscribe
             </button>
           </div>
